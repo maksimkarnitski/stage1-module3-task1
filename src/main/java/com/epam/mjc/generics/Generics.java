@@ -1,6 +1,7 @@
 package com.epam.mjc.generics;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Generics {
@@ -20,8 +21,8 @@ public class Generics {
     }
 
     //TODO: Refactor Method-3
-    public <T> void cloneMethod(List<T> consumer, List<T> producer) {
-        consumer.addAll(producer);
+    public <T, G> void cloneMethod(List<T> consumer, List<G> producer) {
+        consumer.addAll((Collection<? extends T>) producer);
     }
 
 }
